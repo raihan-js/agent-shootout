@@ -74,7 +74,7 @@ Questions do **not** name the article (an earlier benchmark's did, which makes s
 - **A search index that made the task trivial.** Indexing article captions gives recall@5 of 0.98 for a caption query; indexing the text only gives 0.79. The text-only index was chosen on that statistic, before any agent ran.
 - **A power loss in the middle of the noise-floor repeat.** The model server died and 14 to 16 questions per design were written as instant connection errors. That attempt is kept (`results/runs/dev3_repeat_interrupted`) and the repeat was re-run in full; the pre-registration was already committed.
 - **The tool is picky about article numbers.** `get_article` accepts `415-2` but not `415条の2` or `250の6`, and answers "no such article" for articles that exist; 11 of plan-execute's 34 failed lookups were of this kind. The tool was identical for all designs and was not changed after the pre-registration, so it is part of what was measured.
-- **A metric that measured headings.** The pre-registered "unsupported quote" rate is 86% for every design because the answers quote the statute heading from the question back; it is reported, not used, and a refined post-hoc version is labelled as such.
+- **A metric that measured headings.** The pre-registered "unsupported quote" rate is 86% to 90% for every design because the answers quote the statute heading from the question back; it is reported, not used, and a refined post-hoc version is labelled as such.
 
 ## Reproduce
 

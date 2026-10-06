@@ -75,7 +75,7 @@ about the size of one design's own repeat noise (11% for react, 14% for draft-ve
 
 ## Post-hoc (not pre-registered; `scripts/posthoc.py`)
 
-1. **Unsupported quotes.** The pre-registered metric counts a 「…」 passage as unsupported when it is not in a cited article's text. 86% of quoting answers fail it for every design, because the question quotes a statute heading and the answer
+1. **Unsupported quotes.** The pre-registered metric counts a 「…」 passage as unsupported when it is not in a cited article's text. 86% to 90% of quoting answers fail it, for every design, because the question quotes a statute heading and the answer
    quotes it back, and a heading is a caption, not article text. The metric measured headings and is not used to rank designs. Counting a quote as supported if it is in the question or in a cited article's caption: react 8/122 answers (6.6%),
    plan-execute 3/19, supervisor 0/17, draft-verify 8/119 (6.7%).
 2. **Where draft-verify beats react.** Of the 16 questions only draft-verify got right, react had an invented citation in 5 and did not answer in 1; the other 10 are questions where react cited no invented article but missed a gold one. Only react
