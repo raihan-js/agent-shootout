@@ -2684,5 +2684,51 @@
     "share": 0.017694523708750326
    }
   }
+ },
+ "noise_floor": {
+  "react": {
+   "n": 36,
+   "right_to_wrong": 3,
+   "wrong_to_right": 1,
+   "changed": 4,
+   "identical_answers": 5,
+   "correct_run1": 21,
+   "correct_run2": 19,
+   "tokens_run1": 3842.1388888888887,
+   "tokens_run2": 3996.25
+  },
+  "plan_execute": {
+   "n": 36,
+   "right_to_wrong": 1,
+   "wrong_to_right": 0,
+   "changed": 1,
+   "identical_answers": 5,
+   "correct_run1": 22,
+   "correct_run2": 21,
+   "tokens_run1": 10785.222222222223,
+   "tokens_run2": 10884.694444444445
+  },
+  "supervisor": {
+   "n": 36,
+   "right_to_wrong": 1,
+   "wrong_to_right": 1,
+   "changed": 2,
+   "identical_answers": 2,
+   "correct_run1": 21,
+   "correct_run2": 21,
+   "tokens_run1": 7794.027777777777,
+   "tokens_run2": 8232.666666666666
+  },
+  "draft_verify": {
+   "n": 36,
+   "right_to_wrong": 2,
+   "wrong_to_right": 3,
+   "changed": 5,
+   "identical_answers": 3,
+   "correct_run1": 21,
+   "correct_run2": 22,
+   "tokens_run1": 4069.0555555555557,
+   "tokens_run2": 3928.8611111111113
+  }
  }
 }

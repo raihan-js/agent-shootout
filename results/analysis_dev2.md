@@ -50,3 +50,11 @@ Where the tokens go (mean tokens per question, share):
 - **B plan-execute**: step.agent 9,677 (90%); step.force 510 (5%); synth 394 (4%); planner 205 (2%)
 - **C supervisor**: researcher.agent 6,492 (83%); supervisor 682 (9%); writer 326 (4%); researcher.force 295 (4%)
 - **D draft-verify**: draft.agent 3,731 (92%); revise.agent 266 (7%); draft.force 72 (2%)
+
+Noise floor: the same 36 questions run twice under identical settings (results/runs/dev2 vs results/runs/dev3_repeat):
+
+| | A react | B plan-execute | C supervisor | D draft-verify |
+|---|---|---|---|---|
+| identical answers | 5/36 | 5/36 | 2/36 | 3/36 |
+| questions that changed correctness | 4 (3 right to wrong, 1 wrong to right) | 1 (1 right to wrong, 0 wrong to right) | 2 (1 right to wrong, 1 wrong to right) | 5 (2 right to wrong, 3 wrong to right) |
+| correct, run 1 / run 2 | 21 / 19 | 22 / 21 | 21 / 21 | 21 / 22 |
