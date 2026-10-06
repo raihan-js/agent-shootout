@@ -73,5 +73,157 @@
    "runs_with_such_failure": 0,
    "of_which_correct": 0
   }
+ },
+ "grounding": {
+  "react": {
+   "correct": 143,
+   "gold_read": 130,
+   "grounded_correct_rate_of_all": {
+    "k": 130,
+    "n": 240,
+    "rate": 0.5416666666666666,
+    "lo": 0.47636552854886793,
+    "hi": 0.605925958406913
+   },
+   "by_type": {
+    "topic": [
+     53,
+     56
+    ],
+    "neighbour": [
+     44,
+     54
+    ],
+    "pair": [
+     33,
+     33
+    ]
+   }
+  },
+  "plan_execute": {
+   "correct": 148,
+   "gold_read": 147,
+   "grounded_correct_rate_of_all": {
+    "k": 147,
+    "n": 240,
+    "rate": 0.6125,
+    "lo": 0.5476993189463917,
+    "hi": 0.6744851298398191
+   },
+   "by_type": {
+    "topic": [
+     63,
+     63
+    ],
+    "neighbour": [
+     45,
+     46
+    ],
+    "pair": [
+     39,
+     39
+    ]
+   }
+  },
+  "supervisor": {
+   "correct": 156,
+   "gold_read": 144,
+   "grounded_correct_rate_of_all": {
+    "k": 144,
+    "n": 240,
+    "rate": 0.6,
+    "lo": 0.5350156969769947,
+    "hi": 0.6624821596774741
+   },
+   "by_type": {
+    "topic": [
+     66,
+     67
+    ],
+    "neighbour": [
+     39,
+     50
+    ],
+    "pair": [
+     39,
+     39
+    ]
+   }
+  },
+  "draft_verify": {
+   "correct": 153,
+   "gold_read": 139,
+   "grounded_correct_rate_of_all": {
+    "k": 139,
+    "n": 240,
+    "rate": 0.5791666666666667,
+    "lo": 0.5139682274383146,
+    "hi": 0.6423848629820741
+   },
+   "by_type": {
+    "topic": [
+     57,
+     60
+    ],
+    "neighbour": [
+     44,
+     55
+    ],
+    "pair": [
+     38,
+     38
+    ]
+   }
+  }
+ },
+ "grounding_paired": {
+  "react vs plan_execute": {
+   "n": 240,
+   "a": 130,
+   "b": 147,
+   "only_a": 21,
+   "only_b": 38,
+   "p": 0.036343179957053884
+  },
+  "react vs supervisor": {
+   "n": 240,
+   "a": 130,
+   "b": 144,
+   "only_a": 22,
+   "only_b": 36,
+   "p": 0.08694889972991102
+  },
+  "react vs draft_verify": {
+   "n": 240,
+   "a": 130,
+   "b": 139,
+   "only_a": 6,
+   "only_b": 15,
+   "p": 0.0783538818359375
+  },
+  "plan_execute vs supervisor": {
+   "n": 240,
+   "a": 147,
+   "b": 144,
+   "only_a": 24,
+   "only_b": 21,
+   "p": 0.765991824244793
+  },
+  "plan_execute vs draft_verify": {
+   "n": 240,
+   "a": 147,
+   "b": 139,
+   "only_a": 28,
+   "only_b": 20,
+   "p": 0.31232680747326935
+  },
+  "supervisor vs draft_verify": {
+   "n": 240,
+   "a": 144,
+   "b": 139,
+   "only_a": 29,
+   "only_b": 24,
+   "p": 0.5831321542611763
+  }
  }
 }

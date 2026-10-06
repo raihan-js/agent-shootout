@@ -8,6 +8,8 @@
 2. Why draft-verify is ahead of react by 10 questions: how many of the questions where only D is correct are ones where react had an invented citation (what D's verifier removes by design).
 3. Discordance versus the dev noise floor: share of questions on which two designs disagree about `correct`.
 4. Failed article lookups: how many failures were a real article written in a form the tool does not accept (e.g. 61条の2, 250の6), per design, and how often a run with such a failure was correct.
+5. Grounding of the correct answers: the tools are deterministic, so the recorded calls are replayed against the registry and a gold article counts as READ if some call returned its own entry (a
+   search hit with its snippet, or get_article on it). A pointer in another article ("next article id: 731") does not count: the model then knows the number but has not seen the text.
 """
 import itertools
 import json
@@ -102,6 +104,48 @@ def main():
         rows.append(f"| {LABEL[arch]} | {calls} | {failed} ({100 * failed / calls:.1f}%) | {fmt} | {len(fmt_runs)} ({fmt_correct} correct) |")
     md += ["## 4. Failed article lookups (get_article / verify_citation)", "", "| | lookups | failed | failed although the article exists under another spelling | runs with such a failure |", "|---|---|---|---|---|", *rows, "",
            "The tool accepts canonical ids (541, 415-2); a model that writes 61条の2 or 250の6 is told the article does not exist. The tool is the same for every design and was not changed after the pre-registration.", ""]
+
+
+    # 5 grounding of correct answers (replay of the recorded tool calls)
+    def read_ids(r):
+        law, got = r["law"], set()
+        for t in r["tools"]:
+            a = t["args"]
+            if t["name"] == "search_articles":
+                out = lt.search(a.get("query", ""), a.get("law", ""), a.get("top_k", 5))
+                for line in out.splitlines():
+                    m = re.search(r"\d+\. (\S+) .*?\(id ([^)]+)\)", line)
+                    if m and m.group(1) == law:
+                        got.add(m.group(2))
+            elif t["name"] == "get_article" and t["ok"] and lt.law_title(a.get("law", "")) == law:
+                m = re.match(r"\S+ .*?\(id ([^)]+)\)", lt.get(a["law"], a["article"]))
+                if m:
+                    got.add(m.group(1))
+        return got
+
+    res["grounding"], rows = {}, []
+    for arch, recs in runs.items():
+        corr = [r for r in recs if r["score"]["correct"]]
+        grounded = [r for r in corr if set(r["gold"]) <= read_ids(r)]
+        by_type = {ty: (sum(set(r["gold"]) <= read_ids(r) for r in corr if r["type"] == ty), sum(r["type"] == ty for r in corr)) for ty in ("topic", "neighbour", "pair")}
+        res["grounding"][arch] = {"correct": len(corr), "gold_read": len(grounded), "grounded_correct_rate_of_all": rate([r["score"]["correct"] and set(r["gold"]) <= read_ids(r) for r in recs]), "by_type": by_type}
+        g = res["grounding"][arch]["grounded_correct_rate_of_all"]
+        rows.append(f"| {LABEL[arch]} | {len(grounded)}/{len(corr)} ({100 * len(grounded) / len(corr):.1f}%) | " + " | ".join(f"{a}/{b}" for a, b in by_type.values()) +
+                    f" | {100 * g['rate']:.1f}% [{100 * g['lo']:.1f}, {100 * g['hi']:.1f}] ({g['k']}/{g['n']}) |")
+    flag = {a: {r["id"]: bool(r["score"]["correct"] and set(r["gold"]) <= read_ids(r)) for r in recs} for a, recs in runs.items()}
+    res["grounding_paired"], prow = {}, []
+    for p, q in itertools.combinations(runs, 2):
+        ra = [dict(r, score={**r["score"], "correct": flag[p][r["id"]]}) for r in runs[p]]
+        rb = [dict(r, score={**r["score"], "correct": flag[q][r["id"]]}) for r in runs[q]]
+        v = paired(ra, rb, lambda r: r["score"]["correct"])
+        res["grounding_paired"][f"{p} vs {q}"] = v
+        prow.append(f"| {LABEL[p]} vs {LABEL[q]} | {v['a']} | {v['b']} | {v['only_a']} | {v['only_b']} | {v['p']:.3g} |")
+    md += ["## 5. Did the model read the gold article? (correct answers only; replay of the recorded tool calls)", "",
+           "| | correct answers where every gold article was returned by a tool call | topic | neighbour | pair | correct AND gold read, of all 240 |", "|---|---|---|---|---|---|", *rows, "",
+           "A search hit shows the start of the article text; get_article shows all of it. A pointer in a neighbouring article does not count as reading. A correct answer that never read its gold article got the number from a guess or from arithmetic "
+           "(the next article after 730 is usually 731) and has not seen the text it summarises. Example: `test063-ja`, react, cites 民法 731 as the article after 730 and summarises it as a rule about the end of a duty of support; 731 is the minimum marriage age.", "",
+           "Paired comparison on `correct AND gold read` (exact McNemar, post-hoc, six pairs so the same 0.0083 threshold is the fair reading):", "",
+           "| pair | first | second | only first | only second | p |", "|---|---|---|---|---|---|", *prow, ""]
 
     (ROOT / "results/posthoc_test.json").write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n")
     (ROOT / "results/posthoc_test.md").write_text("\n".join(md))
