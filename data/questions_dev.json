@@ -1,0 +1,506 @@
+[
+ {
+  "id": "dev000-ja",
+  "item_id": "dev000",
+  "language": "ja",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法のうち、「婚姻の届出の受理」について定めている条文はどれですか。条文番号を挙げて、その内容を要約してください。",
+  "gold": [
+   "740"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev000-en",
+  "item_id": "dev000",
+  "language": "en",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which article of the Civil Code deals with 「婚姻の届出の受理」? Cite the article number and summarize what it provides.",
+  "gold": [
+   "740"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev001-ja",
+  "item_id": "dev001",
+  "language": "ja",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法のうち、「負担付遺贈の受遺者の免責」について定めている条文はどれですか。条文番号を挙げて、その内容を要約してください。",
+  "gold": [
+   "1003"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev001-en",
+  "item_id": "dev001",
+  "language": "en",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which article of the Civil Code deals with 「負担付遺贈の受遺者の免責」? Cite the article number and summarize what it provides.",
+  "gold": [
+   "1003"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev002-ja",
+  "item_id": "dev002",
+  "language": "ja",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法のうち、「受遺者に対する遺贈の承認又は放棄の催告」について定めている条文はどれですか。条文番号を挙げて、その内容を要約してください。",
+  "gold": [
+   "987"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev002-en",
+  "item_id": "dev002",
+  "language": "en",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which article of the Civil Code deals with 「受遺者に対する遺贈の承認又は放棄の催告」? Cite the article number and summarize what it provides.",
+  "gold": [
+   "987"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev003-ja",
+  "item_id": "dev003",
+  "language": "ja",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法のうち、「抵当建物使用者の引渡しの猶予」について定めている条文はどれですか。条文番号を挙げて、その内容を要約してください。",
+  "gold": [
+   "395"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev003-en",
+  "item_id": "dev003",
+  "language": "en",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which article of the Civil Code deals with 「抵当建物使用者の引渡しの猶予」? Cite the article number and summarize what it provides.",
+  "gold": [
+   "395"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev004-ja",
+  "item_id": "dev004",
+  "language": "ja",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法のうち、「管理不全土地管理命令」について定めている条文はどれですか。条文番号を挙げて、その内容を要約してください。",
+  "gold": [
+   "264-9"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev004-en",
+  "item_id": "dev004",
+  "language": "en",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which article of the Civil Code deals with 「管理不全土地管理命令」? Cite the article number and summarize what it provides.",
+  "gold": [
+   "264-9"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev005-ja",
+  "item_id": "dev005",
+  "language": "ja",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法のうち、「受領遅滞」について定めている条文はどれですか。条文番号を挙げて、その内容を要約してください。",
+  "gold": [
+   "413"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev005-en",
+  "item_id": "dev005",
+  "language": "en",
+  "type": "topic",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which article of the Civil Code deals with 「受領遅滞」? Cite the article number and summarize what it provides.",
+  "gold": [
+   "413"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev006-ja",
+  "item_id": "dev006",
+  "language": "ja",
+  "type": "neighbour",
+  "law": "健康保険法",
+  "law_id": "211AC0000000070",
+  "question": "健康保険法で、「子ども・子育て支援金率」について定めている条文の直後に置かれている条文はどれですか。その条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "160-3"
+  ],
+  "anchor": [
+   "160-2"
+  ]
+ },
+ {
+  "id": "dev006-en",
+  "item_id": "dev006",
+  "language": "en",
+  "type": "neighbour",
+  "law": "健康保険法",
+  "law_id": "211AC0000000070",
+  "question": "In the Health Insurance Act, which article comes immediately after the one on 「子ども・子育て支援金率」? Cite its number and summarize what it provides.",
+  "gold": [
+   "160-3"
+  ],
+  "anchor": [
+   "160-2"
+  ]
+ },
+ {
+  "id": "dev007-ja",
+  "item_id": "dev007",
+  "language": "ja",
+  "type": "neighbour",
+  "law": "刑法",
+  "law_id": "140AC0000000045",
+  "question": "刑法で、「法律上の減軽と刑の選択」について定めている条文の直後に置かれている条文はどれですか。その条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "70"
+  ],
+  "anchor": [
+   "69"
+  ]
+ },
+ {
+  "id": "dev007-en",
+  "item_id": "dev007",
+  "language": "en",
+  "type": "neighbour",
+  "law": "刑法",
+  "law_id": "140AC0000000045",
+  "question": "In the Penal Code, which article comes immediately after the one on 「法律上の減軽と刑の選択」? Cite its number and summarize what it provides.",
+  "gold": [
+   "70"
+  ],
+  "anchor": [
+   "69"
+  ]
+ },
+ {
+  "id": "dev008-ja",
+  "item_id": "dev008",
+  "language": "ja",
+  "type": "neighbour",
+  "law": "健康保険法",
+  "law_id": "211AC0000000070",
+  "question": "健康保険法で、「資格の得喪の確認」について定めている条文の直後に置かれている条文はどれですか。その条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "40"
+  ],
+  "anchor": [
+   "39"
+  ]
+ },
+ {
+  "id": "dev008-en",
+  "item_id": "dev008",
+  "language": "en",
+  "type": "neighbour",
+  "law": "健康保険法",
+  "law_id": "211AC0000000070",
+  "question": "In the Health Insurance Act, which article comes immediately after the one on 「資格の得喪の確認」? Cite its number and summarize what it provides.",
+  "gold": [
+   "40"
+  ],
+  "anchor": [
+   "39"
+  ]
+ },
+ {
+  "id": "dev009-ja",
+  "item_id": "dev009",
+  "language": "ja",
+  "type": "neighbour",
+  "law": "会社法",
+  "law_id": "417AC0000000086",
+  "question": "会社法で、「譲受会社による債務の引受け」について定めている条文の直後に置かれている条文はどれですか。その条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "23-2"
+  ],
+  "anchor": [
+   "23"
+  ]
+ },
+ {
+  "id": "dev009-en",
+  "item_id": "dev009",
+  "language": "en",
+  "type": "neighbour",
+  "law": "会社法",
+  "law_id": "417AC0000000086",
+  "question": "In the Companies Act, which article comes immediately after the one on 「譲受会社による債務の引受け」? Cite its number and summarize what it provides.",
+  "gold": [
+   "23-2"
+  ],
+  "anchor": [
+   "23"
+  ]
+ },
+ {
+  "id": "dev010-ja",
+  "item_id": "dev010",
+  "language": "ja",
+  "type": "neighbour",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法で、「弁済の場所及び時間」について定めている条文の直後に置かれている条文はどれですか。その条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "485"
+  ],
+  "anchor": [
+   "484"
+  ]
+ },
+ {
+  "id": "dev010-en",
+  "item_id": "dev010",
+  "language": "en",
+  "type": "neighbour",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "In the Civil Code, which article comes immediately after the one on 「弁済の場所及び時間」? Cite its number and summarize what it provides.",
+  "gold": [
+   "485"
+  ],
+  "anchor": [
+   "484"
+  ]
+ },
+ {
+  "id": "dev011-ja",
+  "item_id": "dev011",
+  "language": "ja",
+  "type": "neighbour",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法で、「詐欺又は強迫」について定めている条文の直後に置かれている条文はどれですか。その条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "97"
+  ],
+  "anchor": [
+   "96"
+  ]
+ },
+ {
+  "id": "dev011-en",
+  "item_id": "dev011",
+  "language": "en",
+  "type": "neighbour",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "In the Civil Code, which article comes immediately after the one on 「詐欺又は強迫」? Cite its number and summarize what it provides.",
+  "gold": [
+   "97"
+  ],
+  "anchor": [
+   "96"
+  ]
+ },
+ {
+  "id": "dev012-ja",
+  "item_id": "dev012",
+  "language": "ja",
+  "type": "pair",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法で、「後見の計算」と「遺言執行者の行為の効果」についてそれぞれ定めている条文はどれですか。条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "870",
+   "1015"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev012-en",
+  "item_id": "dev012",
+  "language": "en",
+  "type": "pair",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which articles of the Civil Code deal with 「後見の計算」 and 「遺言執行者の行為の効果」? Cite the article numbers and summarize what each provides.",
+  "gold": [
+   "870",
+   "1015"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev013-ja",
+  "item_id": "dev013",
+  "language": "ja",
+  "type": "pair",
+  "law": "健康保険法",
+  "law_id": "211AC0000000070",
+  "question": "健康保険法で、「審査請求及び再審査請求」と「保険料の源泉控除」についてそれぞれ定めている条文はどれですか。条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "189",
+   "167"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev013-en",
+  "item_id": "dev013",
+  "language": "en",
+  "type": "pair",
+  "law": "健康保険法",
+  "law_id": "211AC0000000070",
+  "question": "Which articles of the Health Insurance Act deal with 「審査請求及び再審査請求」 and 「保険料の源泉控除」? Cite the article numbers and summarize what each provides.",
+  "gold": [
+   "189",
+   "167"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev014-ja",
+  "item_id": "dev014",
+  "language": "ja",
+  "type": "pair",
+  "law": "刑法",
+  "law_id": "140AC0000000045",
+  "question": "刑法で、「信書隠匿」と「没収の制限」についてそれぞれ定めている条文はどれですか。条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "263",
+   "20"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev014-en",
+  "item_id": "dev014",
+  "language": "en",
+  "type": "pair",
+  "law": "刑法",
+  "law_id": "140AC0000000045",
+  "question": "Which articles of the Penal Code deal with 「信書隠匿」 and 「没収の制限」? Cite the article numbers and summarize what each provides.",
+  "gold": [
+   "263",
+   "20"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev015-ja",
+  "item_id": "dev015",
+  "language": "ja",
+  "type": "pair",
+  "law": "会社法",
+  "law_id": "417AC0000000086",
+  "question": "会社法で、「業務の休廃止」と「株式交付子会社の株式の譲渡しに関する規定の準用」についてそれぞれ定めている条文はどれですか。条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "950",
+   "774-9"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev015-en",
+  "item_id": "dev015",
+  "language": "en",
+  "type": "pair",
+  "law": "会社法",
+  "law_id": "417AC0000000086",
+  "question": "Which articles of the Companies Act deal with 「業務の休廃止」 and 「株式交付子会社の株式の譲渡しに関する規定の準用」? Cite the article numbers and summarize what each provides.",
+  "gold": [
+   "950",
+   "774-9"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev016-ja",
+  "item_id": "dev016",
+  "language": "ja",
+  "type": "pair",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "民法で、「遺言による担保責任の定め」と「債権の譲渡における債務者の抗弁」についてそれぞれ定めている条文はどれですか。条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "914",
+   "468"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev016-en",
+  "item_id": "dev016",
+  "language": "en",
+  "type": "pair",
+  "law": "民法",
+  "law_id": "129AC0000000089",
+  "question": "Which articles of the Civil Code deal with 「遺言による担保責任の定め」 and 「債権の譲渡における債務者の抗弁」? Cite the article numbers and summarize what each provides.",
+  "gold": [
+   "914",
+   "468"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev017-ja",
+  "item_id": "dev017",
+  "language": "ja",
+  "type": "pair",
+  "law": "会社法",
+  "law_id": "417AC0000000086",
+  "question": "会社法で、「新設分割計画の承認を要しない場合」と「委員の選定等」についてそれぞれ定めている条文はどれですか。条文番号を挙げて、内容を要約してください。",
+  "gold": [
+   "805",
+   "400"
+  ],
+  "anchor": []
+ },
+ {
+  "id": "dev017-en",
+  "item_id": "dev017",
+  "language": "en",
+  "type": "pair",
+  "law": "会社法",
+  "law_id": "417AC0000000086",
+  "question": "Which articles of the Companies Act deal with 「新設分割計画の承認を要しない場合」 and 「委員の選定等」? Cite the article numbers and summarize what each provides.",
+  "gold": [
+   "805",
+   "400"
+  ],
+  "anchor": []
+ }
+]

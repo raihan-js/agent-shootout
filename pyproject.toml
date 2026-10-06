@@ -1,0 +1,25 @@
+[project]
+name = "shootout"
+version = "0.1.0"
+description = "Agent architecture shootout: four LangGraph designs for cited Japanese-law research, compared with everything else held fixed"
+requires-python = ">=3.10"
+dependencies = [
+  "langgraph>=1.2,<1.3",
+  "langchain-core>=1.6",
+  "langchain-openai>=1.0",
+  "langsmith>=0.14,<0.15",
+  "bm25s>=0.3",
+  "requests>=2.31",
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "jacite @ git+https://github.com/raihan-js/jacite-bench@6e23005",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
