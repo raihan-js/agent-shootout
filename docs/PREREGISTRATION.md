@@ -66,4 +66,16 @@ questions change correctness between the two runs, per architecture, and reads t
 
 ## Deviations
 
-None so far. Any change after the test run starts will be listed here with the original numbers kept.
+The test run itself followed this document: one run, prompts v2, the five pinned inputs unchanged (sha256 re-checked before and after), raw records committed (`d4e4056`) before any analysis. The items below are everything that
+differs from, or was added to, what was written above. No number was removed.
+
+1. **Power loss before the test (not a deviation of the test).** The first noise-floor repeat of the dev set was cut short when the PC shut down and the model server died; it was re-run in full with identical settings and the broken attempt is
+   kept (`results/runs/dev3_repeat_interrupted`, see `docs/TUNING.md`). The pre-registration commit `956b41c` predates both.
+2. **Three react runs ended as `llm_error`** (HTTP 500: the model wrote tool-call arguments that were not valid JSON). They are model failures, count as "not answered" as pre-registered, and were not re-run.
+3. **Metrics 3 and 8 and the dominance rule were missing from the first analysis output.** `scripts/analyze.py` computed invented mentions and unsupported quotes but did not print them, and had no dominance table; both were added after the first
+   look at the test numbers. The definitions are unchanged and no earlier table value changed.
+4. **Metric 8 (unsupported quotes) turned out to measure headings, not fabrication:** the question quotes a statute heading, the answer quotes it back, and a heading is a caption, not article text, so 86% of quoting answers count as
+   "unsupported" for every design. The pre-registered number is reported as such and not used to rank designs. A refined version (also accepts the cited articles' captions and the question) is **post-hoc**, in `scripts/posthoc.py`.
+5. **Post-hoc, not pre-registered** (`scripts/posthoc.py`, `results/posthoc_test.md`): the refined quote check, where draft-verify's lead over react comes from, pairwise disagreement versus the noise floor, and failed article lookups.
+6. **Known limitation found after the run, not fixed:** the article tool accepts canonical ids (541, 415-2) only; spellings such as 61条の2 or 250の6 return "no such article" for articles that exist. 11 of plan-execute's 34 failed lookups and 2 of
+   the supervisor's 7 were of this kind (0 for react and draft-verify). The tool is identical for all four designs and was not changed.

@@ -72,7 +72,10 @@ def main():
     md += [f"## {a.name}: main comparison (n = {max(res['n'].values())} questions per architecture)", "",
            "| | " + " | ".join(LABEL[x] for x in archs) + " |", "|---|" + "---|" * len(archs)]
     rows = [("Correct (gold cited, nothing invented)", lambda s: metrics.fmt(s["correct"])), ("Precise (also nothing extra cited)", lambda s: metrics.fmt(s["precise"])),
-            ("Answers with an invented citation", lambda s: metrics.fmt(s["invented"])), ("Gold article(s) cited", lambda s: metrics.fmt(s["gold_hit"])),
+            ("Answers with an invented citation", lambda s: metrics.fmt(s["invented"])),
+            ("Invented mentions / all citation mentions", lambda s: f"{s['invented_mentions']['k']}/{s['invented_mentions']['n']} ({100 * s['invented_mentions']['k'] / max(1, s['invented_mentions']['n']):.1f}%)"),
+            ("Answers with an unsupported quote (of answers that quote)", lambda s: metrics.fmt(s["unsupported_quote"])),
+            ("Gold article(s) cited", lambda s: metrics.fmt(s["gold_hit"])),
             ("Used no tool at all", lambda s: metrics.fmt(s["no_tool_runs"])), ("Not answered (budget, error)", lambda s: metrics.fmt(s["not_answered"])),
             ("Run with a failed tool call", lambda s: metrics.fmt(s["tool_failure_runs"])),
             ("Tokens per question, mean [95% CI]", lambda s: f"{s['tokens']['mean']:,.0f} [{s['tokens']['lo']:,.0f}, {s['tokens']['hi']:,.0f}]"),
@@ -84,6 +87,22 @@ def main():
     md += ["", "Paired comparisons on `correct` (exact McNemar by question; Bonferroni threshold 0.0083 for six pairs):", "", "| Pair | A correct | B correct | only first | only second | p | clears 0.0083 |", "|---|---|---|---|---|---|---|"]
     for k, v in res["paired_correct"].items():
         md.append(f"| {k} | {v['a']} | {v['b']} | {v['only_a']} | {v['only_b']} | {v['p']:.3g} | {'yes' if v['p'] < 0.0083 else 'no'} |")
+    # pre-registered dominance rule: P dominates Q if Q is not detectably better on `correct` (pair p >= 0.0083, or P ahead) AND P's mean tokens are lower with non-overlapping bootstrap intervals
+    dom = []
+    for p in archs:
+        for q in archs:
+            if p == q:
+                continue
+            key = f"{p} vs {q}" if f"{p} vs {q}" in res["paired_correct"] else f"{q} vs {p}"
+            v = res["paired_correct"][key]
+            q_detectably_better = v["p"] < 0.0083 and (v["b"] > v["a"] if key == f"{p} vs {q}" else v["a"] > v["b"])
+            cheaper = S[p]["tokens"]["hi"] < S[q]["tokens"]["lo"]
+            if cheaper and not q_detectably_better:
+                dom.append((p, q))
+    res["dominance"] = [f"{p} dominates {q}" for p, q in dom]
+    Path(ROOT / f"results/analysis_{a.name}.json").write_text(json.dumps(res, indent=1, ensure_ascii=False) + "\n")
+    md += ["", "Dominance (pre-registered: no detectably worse correct rate at 0.0083, and a lower mean cost with non-overlapping bootstrap intervals):", ""]
+    md += [f"- {LABEL[p]} dominates {LABEL[q]}" for p, q in dom] or ["- none"]
     md += ["", "By type and by language (correct rate):", "", "| | " + " | ".join(LABEL[x] for x in archs) + " |", "|---|" + "---|" * len(archs)]
     for key, grp in (("type", res["by_type"]), ("language", res["by_language"])):
         for g in sorted({k for x in archs for k in grp[x]}):

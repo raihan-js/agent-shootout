@@ -1,0 +1,77 @@
+{
+ "refined_quotes": {
+  "react": {
+   "k": 8,
+   "n": 122,
+   "rate": 0.06557377049180328,
+   "lo": 0.02873293401630507,
+   "hi": 0.12512024197236887
+  },
+  "plan_execute": {
+   "k": 3,
+   "n": 19,
+   "rate": 0.15789473684210525,
+   "lo": 0.03382624900176467,
+   "hi": 0.3957845512666743
+  },
+  "supervisor": {
+   "k": 0,
+   "n": 17,
+   "rate": 0.0,
+   "lo": 0.0,
+   "hi": 0.19506432296909318
+  },
+  "draft_verify": {
+   "k": 8,
+   "n": 119,
+   "rate": 0.06722689075630252,
+   "lo": 0.029468535026432176,
+   "hi": 0.12816954961070046
+  }
+ },
+ "d_vs_a": {
+  "only_d": 16,
+  "only_d_a_invented": 5,
+  "only_d_a_not_answered": 1,
+  "only_a": 6,
+  "only_a_d_invented": 0
+ },
+ "discordance": {
+  "react vs plan_execute": 0.22916666666666666,
+  "react vs supervisor": 0.20416666666666666,
+  "react vs draft_verify": 0.09166666666666666,
+  "plan_execute vs supervisor": 0.16666666666666666,
+  "plan_execute vs draft_verify": 0.19583333333333333,
+  "supervisor vs draft_verify": 0.17083333333333334
+ },
+ "lookups": {
+  "react": {
+   "calls": 367,
+   "failed": 2,
+   "failed_real_article_other_spelling": 0,
+   "runs_with_such_failure": 0,
+   "of_which_correct": 0
+  },
+  "plan_execute": {
+   "calls": 822,
+   "failed": 34,
+   "failed_real_article_other_spelling": 11,
+   "runs_with_such_failure": 5,
+   "of_which_correct": 2
+  },
+  "supervisor": {
+   "calls": 616,
+   "failed": 7,
+   "failed_real_article_other_spelling": 2,
+   "runs_with_such_failure": 1,
+   "of_which_correct": 0
+  },
+  "draft_verify": {
+   "calls": 382,
+   "failed": 2,
+   "failed_real_article_other_spelling": 0,
+   "runs_with_such_failure": 0,
+   "of_which_correct": 0
+  }
+ }
+}
